@@ -1,4 +1,4 @@
-package com.project.config;
+package com.project.domain.config;
 
 import com.fasterxml.jackson.databind.ser.SerializerFactory;
 import com.project.common.json.LocaleAwareSerializerModifier;
