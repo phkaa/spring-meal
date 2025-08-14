@@ -28,7 +28,8 @@ spring-meal
 ---
 
 ## ✨ 공통 기능 목록
-### - [Json Locale 직렬화](./meal-common/readme_jsonlocale.md)
+- [공통 응답](./meal-common/readme_common_response.md)
+- [Json Locale 직렬화](./meal-common/readme_jsonlocale.md)
 
 
 ---

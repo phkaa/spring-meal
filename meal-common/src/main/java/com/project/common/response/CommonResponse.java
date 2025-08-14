@@ -33,7 +33,7 @@ public class CommonResponse<T> {
         return success(message, null);
     }
 
-    public static <T> CommonResponse<T> fail(String code, String message, T data) {
+    public static <T> CommonResponse<T> fail(String message, T data) {
         return CommonResponse.<T>builder()
                 .message(Optional.ofNullable(message).orElse(Strings.EMPTY))
                 .data(data)
