@@ -15,10 +15,8 @@ public class JacksonConfig {
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer localeModifierCustomizer() {
         return builder -> builder.postConfigurer(objectMapper -> {
-            // 기존 SerializerFactory 가져오기
             SerializerFactory existingFactory = objectMapper.getSerializerFactory();
 
-            // LocaleAwareSerializerModifier 적용
             objectMapper.setSerializerFactory(
                     existingFactory.withSerializerModifier(new LocaleAwareSerializerModifier())
             );

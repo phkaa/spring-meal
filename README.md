@@ -13,6 +13,7 @@
 spring-meal
 ├── meal-api      # API 테스트 모듈 (Controller, 샘플 API 등)
 └── meal-common   # 공통 모듈 (유틸, DTO, 공통 설정 등)
+└── meal-domain   # API Domain 테스트 모듈 (비즈니스 로직, 공통 설정 등)
 ```
 
 ---
@@ -23,6 +24,12 @@ spring-meal
 - **Spring Boot 3.x**
 - **Gradle**
 - **Junit 5**
+
+---
+
+## ✨ 공통 기능 목록
+### - [Json Locale 직렬화](./meal-common/readme_jsonlocale.md)
+
 
 ---
 
@@ -50,7 +57,7 @@ spring-meal
 
 ---
 
-### 32. meal-api
+### 3. meal-api
 - `meal-common` 모듈을 사용하여 API를 구현하고 테스트하는 모듈
 - 샘플 Controller, Service, 예외 처리 구조를 포함
 - 다른 프로젝트에 적용하기 전 기능 검증 및 예제 제공
