@@ -1,4 +1,5 @@
 rootProject.name = 'meal'
 
 include 'meal-common'
+include 'meal-domain'
 include 'meal-api'

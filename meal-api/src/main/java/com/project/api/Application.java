@@ -1,4 +1,4 @@
-package com.project.common.api;
+package com.project.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

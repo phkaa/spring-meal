@@ -1,7 +1,3 @@
-plugins {
-    id 'java'
-}
-
 group = 'com.project.api'
 version = '0.0.1-SNAPSHOT'
 
@@ -13,11 +9,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation platform(libs.junit5.bom)
+    testImplementation(libs.junit5)
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation project(':meal-common')
+    implementation(libs.spring.boot.starter.web)
+    implementation project(':meal-domain')
 }
 
 test {

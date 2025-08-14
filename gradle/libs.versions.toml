@@ -1,0 +1,35 @@
+[versions]
+springBoot = "3.5.4"
+springSecurity = "6.5.2"
+dependencyManagement = "1.1.7"
+lombok = "1.18.38"
+junit = "5.10.0"
+hibernateValidator = "9.0.1.Final"
+jackson = "2.19.2"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+dependency-management = { id = "io.spring.dependency-management", version.ref = "dependencyManagement" }
+
+[libraries]
+# spring boot
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "springBoot" }
+spring-boot-starter-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation", version.ref = "springBoot" }
+spring-boot-auto-configure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure", version.ref = "springBoot" }
+
+# hibernate
+hibernate-validator = { group = "org.hibernate.validator", name = "hibernate-validator", version.ref = "hibernateValidator" }
+
+# json
+jackson-core = { group = "com.fasterxml.jackson.core", name = "jackson-core", version.ref = "jackson" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
+
+# lombok
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+
+# Testing libraries
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "springBoot" }
+spring-security-test = { group = "org.springframework.security", name = "spring-security-test", version.ref = "springSecurity" }
+junit5 = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit5-bom = { group = "org.junit", name = "junit-bom", version.ref = "junit" }
+

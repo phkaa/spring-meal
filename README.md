@@ -41,7 +41,16 @@ spring-meal
 
 ---
 
-### 2. meal-api
+### 2. meal-domain
+- `meal-common` 모듈을 사용하여 비즈니스 로직을 구현하는 모듈
+- 주요 내용:
+  - **api 와 연동하여 비즈니스 로직 구성** 
+
+> 빌드시 실행 가능한 JAR이 아닌 **라이브러리 JAR**로 패키징됩니다.
+
+---
+
+### 32. meal-api
 - `meal-common` 모듈을 사용하여 API를 구현하고 테스트하는 모듈
 - 샘플 Controller, Service, 예외 처리 구조를 포함
 - 다른 프로젝트에 적용하기 전 기능 검증 및 예제 제공
@@ -69,6 +78,8 @@ spring-meal
 
 - `meal-common`:  
   - `build/libs/meal-common-<version>-SNAPSHOT-plain.jar` → **라이브러리 JAR**
+- `meal-domain`:
+  - `build/libs/meal-domain-<version>-SNAPSHOT-plain.jar` → **라이브러리 JAR**
 - `meal-api`:  
   - `build/libs/meal-api-<version>-SNAPSHOT.jar` → **실행 가능 JAR** (`java -jar` 가능)
 
