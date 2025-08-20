@@ -30,6 +30,7 @@ spring-meal
 ## ✨ 공통 기능 목록
 - [공통 응답](./meal-common/readme_common_response.md)
 - [Json Locale 직렬화](./meal-common/readme_jsonlocale.md)
+- [동시성 처리](./meal-common/readme_concurrency.md)
 
 
 ---
