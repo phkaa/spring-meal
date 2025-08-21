@@ -30,11 +30,11 @@ test {
     useJUnitPlatform()
 }
 
-flyway {
-    url = 'jdbc:mysql://localhost:3300/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul'
-    user = 'test'
-    password = 'test'
-    locations = ['filesystem:flyway']  // domain 루트의 flyway 폴더
-    baselineOnMigrate = true
-    baselineVersion = '1'
-}
+//flyway {
+//    url = 'jdbc:mysql://localhost:3300/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul'
+//    user = 'test'
+//    password = 'test'
+//    locations = ['filesystem:flyway']  // domain 루트의 flyway 폴더
+//    baselineOnMigrate = true
+//    baselineVersion = '1'
+//}
