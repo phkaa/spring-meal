@@ -26,9 +26,11 @@ POST /concurrencies/v1?stockCount={stockCount}
 **Response**
 
 ``` json
+data 에 stock 의 id 를 응답합니다.
+
 {
   "message": "success",
-  "data": 100
+  "data": 1
 }
 ```
 
@@ -37,7 +39,7 @@ POST /concurrencies/v1?stockCount={stockCount}
 ### 2. 현재 남은 재고 수 조회
 
 ``` http
-GET /concurrencies/v1
+GET /concurrencies/{id}/v1
 ```
 
 **Response**
@@ -54,7 +56,7 @@ GET /concurrencies/v1
 ### 3. 재고수 하나 씩 감소 (동시성 제어 미적용)
 
 ``` http
-GET /concurrencies/no/v1
+GET /concurrencies/{id}/no/v1
 ```
 
 **Response**
@@ -88,7 +90,7 @@ GET /concurrencies/no/v1
 
 ## 기대 결과
 
--   **동시성 제어 없는 API (`/concurrencies/no/v1`)**\
+-   **동시성 제어 없는 API (`/concurrencies/{id}/no/v1`)**\
     여러 요청이 동시에 들어오면 재고가 0이 되지 않고 **일부 값이 남는
     현상**이 발생합니다.
 

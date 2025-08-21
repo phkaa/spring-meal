@@ -1,2 +1,5 @@
+spring:
+  profiles:
+    active: domain
 server:
   port: 8000

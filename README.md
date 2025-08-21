@@ -6,6 +6,22 @@
 필요할 때 꺼내 쓸 수 있도록 관리하는 것을 목표로 합니다.
 
 ---
+## 🛠️ 사전 준비
+- docker mysql 설치
+```
+docker pull mysql:8.0
+
+docker run -d \
+  --name mysql3300 \
+  -e MYSQL_ROOT_PASSWORD=test \
+  -e MYSQL_USER=test \
+  -e MYSQL_PASSWORD=test \
+  -e MYSQL_DATABASE=testdb \
+  -p 3300:3306 \
+  mysql:8.0
+```
+
+---
 
 ## 📂 프로젝트 구조
 
@@ -24,6 +40,7 @@ spring-meal
 - **Spring Boot 3.x**
 - **Gradle**
 - **Junit 5**
+- **flyway**
 
 ---
 

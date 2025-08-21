@@ -18,15 +18,13 @@ public class ConcurrencyController {
      * 재고수 설정
      *
      * @param stockCount 재고수
-     * @return 응답
+     * @return 재고 아이디
      */
     @PostMapping("/v1")
-    public CommonResponse<Integer> saveStockCount(
+    public CommonResponse<Long> saveStockCount(
             @RequestParam(defaultValue = "100") int stockCount
     ) {
-        concurrencyApplication.saveStockCount(stockCount);
-
-        return CommonResponse.success(stockCount);
+        return CommonResponse.success(concurrencyApplication.saveStockCount(stockCount));
     }
 
     /**
@@ -34,9 +32,11 @@ public class ConcurrencyController {
      *
      * @return 남은 재고수
      */
-    @GetMapping("/v1")
-    public CommonResponse<Integer> getRemainStockCount() {
-        return CommonResponse.success(concurrencyApplication.getRemainStockCount());
+    @GetMapping("/{id:\\d+}/v1")
+    public CommonResponse<Integer> getRemainStockCount(
+            @PathVariable Long id
+    ) {
+        return CommonResponse.success(concurrencyApplication.getRemainStockCount(id));
     }
 
     /**
@@ -44,8 +44,12 @@ public class ConcurrencyController {
      * 
      * @return 남은 재고수
      */
-    @GetMapping("/no/v1")
-    public CommonResponse<Integer> getRemainStockCountByNoConcurrency() {
-        return CommonResponse.success(concurrencyApplication.getRemainStockCountByNoConcurrency());
+    @GetMapping("/{id:\\d+}/no/v1")
+    public CommonResponse<Void> getRemainStockCountByNoConcurrency(
+            @PathVariable Long id
+    ) {
+        concurrencyApplication.getRemainStockCountByNoConcurrency(id);
+
+        return CommonResponse.success();
     }
 }
