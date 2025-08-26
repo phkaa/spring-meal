@@ -1,3 +1,10 @@
+buildscript {
+    dependencies {
+        classpath(libs.flyway.mysql)
+        classpath(libs.mysql.connector)
+    }
+}
+
 plugins {
     alias(libs.plugins.flyway)
 }
@@ -10,6 +17,16 @@ jar { enabled = true }
 
 repositories {
     mavenCentral()
+}
+
+flyway {
+    cleanDisabled = false
+
+    // domain 모듈 기준 상대경로
+    configFiles = ["${projectDir}/flyway/flyway.conf"]
+
+    // SQL 파일 경로
+    locations = ["filesystem:${projectDir}/flyway/migration"]
 }
 
 dependencies {
@@ -29,12 +46,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-//flyway {
-//    url = 'jdbc:mysql://localhost:3300/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul'
-//    user = 'test'
-//    password = 'test'
-//    locations = ['filesystem:flyway']  // domain 루트의 flyway 폴더
-//    baselineOnMigrate = true
-//    baselineVersion = '1'
-//}

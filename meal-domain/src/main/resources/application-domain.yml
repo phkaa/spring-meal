@@ -1,12 +1,6 @@
 spring:
   flyway:
-    enabled: true
-    url: jdbc:mysql://localhost:3300/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
-    user: test
-    password: test
-    locations: classpath:db/migration
-    baseline-on-migrate: true
-    baseline-version: 1
+    enabled: false
   datasource:
     url: jdbc:mysql://localhost:3300/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
     username: test

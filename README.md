@@ -7,7 +7,7 @@
 
 ---
 ## 🛠️ 사전 준비
-- docker mysql 설치
+- docker mysql 설치합니다.
 ```
 docker pull mysql:8.0
 
@@ -21,6 +21,10 @@ docker run -d \
   mysql:8.0
 ```
 
+- mysql 설치 완료 후 프로젝트 루트에서 아래의 명령어를 실행합니다.
+```
+gradlew flywayBaseline flywayMigrate
+```
 ---
 
 ## 📂 프로젝트 구조
