@@ -21,6 +21,15 @@ docker run -d \
   mysql:8.0
 ```
 
+- docker redis 설치합니다.
+```
+docker run -d \
+  --name redis \
+  -p 6000:6379 \
+  redis:7 \
+  redis-server --requirepass "test"
+```
+
 - mysql 설치 완료 후 프로젝트 루트에서 아래의 명령어를 실행합니다.
 ```
 gradlew flywayBaseline flywayMigrate
