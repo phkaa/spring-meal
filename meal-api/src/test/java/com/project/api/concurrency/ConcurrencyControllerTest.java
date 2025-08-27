@@ -46,8 +46,8 @@ public class ConcurrencyControllerTest extends BaseIntegrationTest {
 
 
     @Test
-    @DisplayName("동시성 처리 없이 남은 재고수 가져오기 테스트")
-    public void testGetRemainStockCountByNoConcurrency() throws Exception {
+    @DisplayName("동시성 처리 없이 남은 재고 감소 테스트")
+    public void testDiscountByNoConcurrency() throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
 
@@ -55,6 +55,28 @@ public class ConcurrencyControllerTest extends BaseIntegrationTest {
             executorService.submit(() -> {
                 try {
                     mockMvc.perform(get("/concurrencies/{0}/no/v1", stockId))
+                            .andExpect(status().isOk());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    latch.countDown();
+                }
+            });
+        }
+
+        latch.await();
+    }
+
+    @Test
+    @DisplayName("redisson 으로 동시성 처리 후 재고 감소 테스트")
+    public void testDiscountByRedissonLock() throws Exception {
+        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
+        CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
+
+        for (int index = 0; index < THREAD_COUNT; index++) {
+            executorService.submit(() -> {
+                try {
+                    mockMvc.perform(get("/concurrencies/{0}/redisson/v1", stockId))
                             .andExpect(status().isOk());
                 } catch (Exception e) {
                     e.printStackTrace();

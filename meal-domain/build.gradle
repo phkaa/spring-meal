@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.data.jpa)
     implementation(libs.flyway.mysql)
+    implementation(libs.spring.boot.redisson)
 
     api(libs.spring.boot.auto.configure)
     api project(':meal-common')

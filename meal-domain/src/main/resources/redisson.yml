@@ -1,0 +1,10 @@
+singleServerConfig:
+  address: "redis://localhost:6000"
+  password: "test"
+  connectionMinimumIdleSize: 10
+  connectionPoolSize: 64
+  idleConnectionTimeout: 30000
+  connectTimeout: 10000
+  timeout: 5000
+threads: 4
+nettyThreads: 4

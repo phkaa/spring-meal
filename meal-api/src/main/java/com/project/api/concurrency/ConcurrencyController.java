@@ -40,15 +40,25 @@ public class ConcurrencyController {
     }
 
     /**
-     * 동시성 처리 없이 남은 재고수 가져오기
-     * 
-     * @return 남은 재고수
+     * 동시성 처리 없이 남은 재고 감소
      */
     @GetMapping("/{id:\\d+}/no/v1")
-    public CommonResponse<Void> getRemainStockCountByNoConcurrency(
+    public CommonResponse<Void> discountByNoConcurrency(
             @PathVariable Long id
     ) {
-        concurrencyApplication.getRemainStockCountByNoConcurrency(id);
+        concurrencyApplication.discountByNoConcurrency(id);
+
+        return CommonResponse.success();
+    }
+
+    /**
+     * redisson 으로 동시성 처리 후 재고 감소
+     */
+    @GetMapping("/{id:\\d+}/redisson/v1")
+    public CommonResponse<Void> discountByRedissonLock(
+            @PathVariable Long id
+    ) {
+        concurrencyApplication.discountByRedissonLock(id);
 
         return CommonResponse.success();
     }

@@ -9,6 +9,7 @@ jackson = "2.19.2"
 jsonPath = "2.9.0"
 flyway = "11.11.1"
 mysql = "9.4.0"
+redisson = "3.51.0"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
@@ -21,6 +22,7 @@ spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-b
 spring-boot-starter-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation", version.ref = "springBoot" }
 spring-boot-auto-configure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure", version.ref = "springBoot" }
 spring-boot-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version.ref = "springBoot" }
+spring-boot-redisson = { group = "org.redisson", name = "redisson-spring-boot-starter", version.ref = "redisson"}
 
 # mysql
 mysql-connector = { group = "com.mysql", name = "mysql-connector-j", version.ref = "mysql" }

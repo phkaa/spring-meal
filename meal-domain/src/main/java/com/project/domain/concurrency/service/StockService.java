@@ -4,6 +4,7 @@ import com.project.domain.concurrency.entity.Stock;
 import com.project.domain.concurrency.repository.StockRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,7 @@ public class StockService {
                 .orElse(0);
     }
 
+    @Transactional
     public Integer discountStockCount(Long id) {
         Stock stock = this.stockRepository.findById(id).get();
         stock.discountStockCount();
