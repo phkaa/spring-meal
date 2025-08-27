@@ -63,8 +63,7 @@ GET /concurrencies/{id}/no/v1
 
 ``` json
 {
-  "message": "success",
-  "data": 95
+  "message": "success"
 }
 ```
 
@@ -72,6 +71,22 @@ GET /concurrencies/{id}/no/v1
 > 수 있습니다.\
 > (예: 100개의 요청을 보내더라도 최종 재고가 `0`이 아니라 `3` 같은 값이
 > 남을 수 있음)
+
+------------------------------------------------------------------------
+
+### 4. 재고수 하나 씩 감소 (Redisson lock 으로 동시성 제어)
+
+``` http
+GET /concurrencies/{id}/redisson/v1
+```
+
+**Response**
+
+``` json
+{
+  "message": "success"
+}
+```
 
 ------------------------------------------------------------------------
 
